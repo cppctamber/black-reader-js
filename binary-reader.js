@@ -183,6 +183,15 @@ export default class BinaryReader {
     return value
   }
 
+  readI32() {
+    let value = this.view.getInt32(this.offset, true)
+    this.offset += 4
+
+    this.debugContext.log("reading i32 (%d)", value)
+
+    return value
+  }
+
   readI64() {
     let low = this.view.getUint32(this.offset, true)
     let high = this.view.getInt32(this.offset + 4, true)

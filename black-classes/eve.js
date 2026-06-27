@@ -14,13 +14,20 @@ class AudEventKey {
 }
 
 class Locator {
-  constructor(position, direction) {
+  constructor(position, direction, scale, boneIndex) {
     this.position = position
     this.direction = direction
+    this.scale = scale
+    this.boneIndex = boneIndex
   }
 
   static readStruct(reader) {
-    return new Locator(r.vector4(reader), r.vector4(reader))
+    return new Locator(
+      r.vector3(reader),
+      r.quaternion(reader),
+      r.vector3(reader),
+      reader.readI32()
+    )
   }
 }
 

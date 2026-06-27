@@ -378,7 +378,7 @@ export default {
     scaledByParent: r.boolean,
     textureIndex: r.uint,
     turbulenceAmplitude: r.float,
-    turbulenceFrequency: r.float,
+    turbulenceFrequency: r.uint,
     velocityStretchRotation: r.float
   },
 
@@ -414,7 +414,7 @@ export default {
     scaledByParent: r.boolean,
     textureIndex: r.uint,
     turbulenceAmplitude: r.float,
-    turbulenceFrequency: r.float,
+    turbulenceFrequency: r.uint,
     velocityStretchRotation: r.float
   },
 

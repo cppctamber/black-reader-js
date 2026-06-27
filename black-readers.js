@@ -109,8 +109,6 @@ export function int64(reader) {
   return reader.readI64()
 }
 
-export const int64_T = int64
-
 export function matrix4(reader) {
   var buffer = new ArrayBuffer(64)
 
