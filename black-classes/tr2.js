@@ -254,6 +254,9 @@ export default {
 
   "Tr2CurveEulerRotationExpression": {
     input1: r.float,
+    input2: r.float,
+    input3: r.float,
+    input4: r.float,
     inputs: r.array,
     name: r.string,
     expressionYaw: r.string,
@@ -267,13 +270,15 @@ export default {
     expression: r.string,
     input1: r.float,
     input2: r.float,
-    input3: r.float
+    input3: r.float,
+    input4: r.float
   },
 
   "Tr2ScalarExprKey": {
     input1: r.float,
     input2: r.float,
     input3: r.float,
+    input4: r.float,
     interpolation: r.uint,
     left: r.float,
     right: r.float,
@@ -289,6 +294,10 @@ export default {
   },
 
   "Tr2CurveVector3Expression": {
+    input1: r.float,
+    input2: r.float,
+    input3: r.float,
+    input4: r.float,
     inputs: r.array,
     name: r.string,
     expressionX: r.string,
@@ -488,7 +497,8 @@ export default {
     noiseFrequency: r.float,
     noiseOctaves: r.float,
     position: r.vector3,
-    radius: r.float
+    radius: r.float,
+    rotation: r.quaternion
   },
 
   "Tr2LodResource": {
@@ -555,12 +565,14 @@ export default {
   "Tr2SpotLight" : {
     name: r.string,
     brightness: r.float,
+    castsShadows: r.float, // <---- WHAT IN THE WORLD
     color: r.color,
     innerAngle: r.float,
     innerRadius: r.float,
-    noiseAmplitude: r.float,
-    noiseFrequency: r.float,
-    noiseOctaves: r.float,
+    lightProfilePath: r.path,
+    //noiseAmplitude: r.float,
+    //noiseFrequency: r.float,
+    //noiseOctaves: r.float,
     outerAngle: r.float,
     position: r.vector3,
     radius: r.float,
@@ -792,6 +804,38 @@ export default {
 
   "Tr2SyncToAnimation": {
 
-  }
+  },
+
+    "Tr2CurveColorMixer": {
+        name: r.string,
+        color1: r.color,
+        color2: r.color,
+        saturation: r.float,
+        brightness: r.float
+    },
+
+    "Tr2AudioStretchAuto": {
+        sourceEmitter: r.object,
+        destinationEmitter: r.object,
+        stretchEmitter: r.object,
+        outburstEvent: r.string,
+    },
+
+    "Tr2AudioStretchBase": {
+        sourceEmitter: r.object,
+        destinationEmitter: r.object,
+        stretchEmitter: r.object,
+        outburstEvent: r.string,
+        impactEvent: r.string,
+        stretchEvent: r.string
+    },
+
+    "Tr2DynamicBinding": {
+        name: r.string,
+        destinationObjectPath: r.string,
+        destinationObjectAttribute: r.string,
+        sourceObjectPath: r.string,
+        sourceObjectAttribute: r.string,
+    },
 
 }

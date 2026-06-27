@@ -183,6 +183,18 @@ export default class BinaryReader {
     return value
   }
 
+  readI64() {
+    let low = this.view.getUint32(this.offset, true)
+    let high = this.view.getInt32(this.offset + 4, true)
+    this.offset += 8
+
+    let value = high * 0x100000000 + low
+
+    this.debugContext.log("reading i64 (%d)", value)
+
+    return value
+  }
+
   readU32Array(n) {
     if (n < 0) { throw new RangeError(`n should be positive: got ${n}`) }
 

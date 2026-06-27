@@ -129,6 +129,11 @@ export default {
     fxAttributes: r.array,
   },
 
+  "EveSpaceObjectFxAttributes": {
+    name: r.string,
+    source: r.object
+  },
+
   "EveCamera": {
     fieldOfView: r.float,
     friction: r.float,
@@ -197,7 +202,9 @@ export default {
     scaling: r.vector3,
     staticTransform: r.boolean,
     transformModifiers: r.array,
-    translation: r.vector3
+    translation: r.vector3,
+    useStaticRotation: r.boolean,
+    useStaticScale: r.boolean
   },
 
   "EveChildEffectPropagator": {
@@ -211,14 +218,19 @@ export default {
     locatorSetName: r.string,
     keys: r.array,
     maxLifeTime: r.float,
+    numTriggers: r.int64,
     propagationType: r.uint,
+    range: r.float,
     randScaleMax: r.float,
+    randScaleMin: r.float,
+    minRangeThreshold: r.float,
+    ClosenessPreference: r.float,
     replayAfterDelay: r.boolean,
     skipCleanup: r.boolean,
     stopToClearDelay: r.float,
-    stopAfterNumTriggers: r.uint,
+    stopAfterNumTriggers: r.float,
     trigger: r.boolean,
-    triggerMethood: r.object,           // Error in definitions
+    triggerMethood: r.uint,             // Binary spelling mistake
     triggerSphereOffset:  r.vector3,
     triggerSphereRadiusCurve: r.object,
     turbulenceAmplitude: r.float,
@@ -249,7 +261,8 @@ export default {
   "EveChildInstanceContainer" : {
     source: r.object,
     scaling: r.vector3,
-    localTransform: r.matrix4
+    localTransform: r.matrix4,
+    useStaticRotation: r.boolean
   },
 
   "EveLineChildContainer" : {
@@ -281,6 +294,8 @@ export default {
 
   "EveChildMesh": {
     display: r.boolean,
+    castShadow: r.boolean,
+    lights: r.array,
     localTransform: r.matrix4,
     lowestLodVisible: r.uint,
     mesh: r.object,
@@ -293,6 +308,7 @@ export default {
     staticTransform: r.boolean,
     transformModifiers: r.array,
     translation: r.vector3,
+    updateAnimation: r.boolean,
     useSpaceObjectData: r.boolean,
     useSRT: r.boolean
   },
@@ -321,6 +337,7 @@ export default {
     name: r.string,
     particleEmitters: r.array,
     particleSystems: r.array,
+    reflectionMode: r.uint,
     rotation: r.quaternion,
     scaling: r.vector3,
     translation: r.vector3,

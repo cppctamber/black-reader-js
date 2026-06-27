@@ -911,6 +911,7 @@ export default {
   },
 
   "EveSOFDataVisibilityGroup" :{
+    description: r.string,
     name: r.string
   }
 
