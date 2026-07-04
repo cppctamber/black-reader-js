@@ -78,11 +78,11 @@ class Key {
     result[typeSymbol] = "Tr2CurveScalarKey"
     result.time = reader.readF32()
     result.value = reader.readF32()
-    result.startTangent = reader.readF32()
-    result.endTangent = reader.readF32()
-    result.index = reader.readU16()
+    result.leftTangent = reader.readF32()
+    result.rightTangent = reader.readF32()
+    result.id = reader.readU16()
     result.interpolation = reader.readU8()
-    result.extrapolation = reader.readU8()
+    result.tangentType = reader.readU8()
 
     return result
   }
@@ -592,8 +592,11 @@ export default {
 
   "Tr2CurveColorMixer": {
     name: r.string,
+    startCurve: r.object,
+    endCurve: r.object,
     color1: r.color,
     color2: r.color,
+    lerpValue: r.float,
     saturation: r.float,
     brightness: r.float
   },
@@ -851,8 +854,11 @@ export default {
 
     "Tr2CurveColorMixer": {
         name: r.string,
+        startCurve: r.object,
+        endCurve: r.object,
         color1: r.color,
         color2: r.color,
+        lerpValue: r.float,
         saturation: r.float,
         brightness: r.float
     },
