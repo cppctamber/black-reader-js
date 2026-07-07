@@ -1,3 +1,17 @@
+# Deprecated
+
+This fork is no longer maintained. It is kept only as a historical reference for the old EVE Online black file reader.
+
+Status: deprecated as of July 2026. New issues and pull requests are not expected to be handled here.
+
+Replacement path: CarbonEngineJS `@carbonenginejs/format-black`.
+
+Original project and author: `rawrafox/black-reader-js` by Rawra Fox.
+
+---
+
+# Original README
+
 Black Reader JS
 ======
 A library for converting Eve Online black files to JSON
